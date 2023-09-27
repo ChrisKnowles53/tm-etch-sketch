@@ -1,24 +1,40 @@
 console.clear();
 
-
-// outsome 16x16 grid of square divs - make thme appear as grid not in a line
-
-// put them in a container div which is in the html
-
-
-// use a for loop to iterate through from 1 to 16
-// in the for loop create a div and append it to the grid container
-// add a class name to each div
-
-const container = document.getElementById('grid-container');
-
-function createGridSquare(number) {
-    const gridSquare = document.createElement('div');
-    gridSquare.classList.add(`grid-square`);
-    gridSquare.textContent = `${number + 1}`;
-    return gridSquare;
+        
+function createGrid(number) {
+    const container = document.getElementById("container");
+        
+    for (let rows = 0; rows < number; rows++) {
+        for (let columns = 0; columns < number; columns++) {
+            const div = document.createElement("div");
+            div.className = "grid";
+            container.appendChild(div);
+        }
+    }
+        
+    const gridElements = document.querySelectorAll(".grid");
+    gridElements.forEach((element) => {
+        element.style.width = 800 / number + "px";
+        element.style.height = 800 / number + "px";
+    });
 }
+        
+createGrid(30);
 
-for (let i = 0; i < 16 * 16; i++) {
-    container.appendChild(createGridSquare(i));
+//hover states
+// 💭 css .grid: hover {} will change the grid when the mouse is hovering over it
+// 💭 can i use event listener to see if the mouse has hovered adn change the state of that particular div?
+// what am i listening for - mouse over
+// mouse over what - the specific div in the grid
+    // will need to listen to all gird squares - need to loop the eventlistener through all the divs (think RPS loop over buttons)
+// what to do - change background to red
+
+
+const divs = document.getElementsByClassName('grid');
+
+for (let i = 0; i < divs.length; i++) {
+    divs[i].addEventListener('mouseover', function (specificDiv) {
+        specificDiv.target.style.backgroundColor = 'red';
+
+    });
 }

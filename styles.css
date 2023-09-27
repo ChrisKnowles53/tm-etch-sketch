@@ -2,23 +2,28 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    max-height: 100vh;
-    margin: 20px;
 }
 
-.grid-container {
-    display: flex;
-    flex-wrap: wrap;
-    max-width: 550px;
+#container {
+    position: relative;
+	top: 30px;
+	outline:2px solid #000;
+	font-size: 0;
+	margin:auto;
+	height:800px;
+	width:800px;
+	padding: 0;
+	border: none;
 }
 
-.grid-square {
-    flex: 0 0 calc(6.25% - 2px);
-    aspect-ratio: 1/1 ;
-    background-color: lightgray;
-    color: black;
-    border: 1px solid blue;
-    text-align: center;
-    box-sizing: border-box;
-    font-size: 12px;
+.grid {
+    margin:0;
+	padding:0;
+	border:none;
+	outline:1px solid red;
+	display:inline-block;
+}
+
+.grid:hover {
+    background-color: red;
 }
