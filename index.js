@@ -1,10 +1,5 @@
 console.clear();
 
-// add a button at the top asking new grid
-// addEventlistner to button that prompts the user to enter a number
-// validate the number is between 2 and 100 
-// the number should thna create a new grid
-
 const container = document.getElementById("container");
 const button = document.createElement("button");
 button.innerText = "New Grid ?";
@@ -19,12 +14,12 @@ button.addEventListener('click', function () {
 });
 
 function userInput() {
-    let userInput = prompt("Please enter the size of the grid 2 to 100");
-    if (userInput < 2 || userInput > 100 || userInput === '') {
-        userInput();
-    } else {
-        return userInput;
-    }
+    let userInput;
+    do {
+        userInput = prompt("Please enter the size of the grid (2 to 100)");
+    } while (userInput === null || userInput === '' || userInput < 2 || userInput > 100);
+
+    return userInput;
 }
 
 
@@ -44,6 +39,7 @@ function createGrid(number) {
             element.style.width = 800 / number + "px";
             element.style.height = 800 / number + "px";
         });
+    
         const divs = document.getElementsByClassName('grid');
         
         for (let i = 0; i < divs.length; i++) {
