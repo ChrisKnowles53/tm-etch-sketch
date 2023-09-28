@@ -21,12 +21,12 @@ const button = document.createElement("button");
     container.insertAdjacentElement('beforebegin', button);
 
 button.addEventListener('click', function () {
-    const userInputValue = userInput();
+    const userInputValue = getUserInput();
      createGrid(userInputValue); // Call createGrid with the user input
     
 });
 
-function userInput() {
+function getUserInput() {
     let userInput;
     do {
         userInput = prompt("Please enter the size of the grid (2 to 100)");
