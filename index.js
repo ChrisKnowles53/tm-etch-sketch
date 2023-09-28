@@ -64,13 +64,29 @@ function createGrid(number) {
     
     for (let i = 0; i < divs.length; i++) {
         divs[i].addEventListener('mouseover', function (specificDiv) {
-            specificDiv.target.style.backgroundColor = 'red';
+            specificDiv.target.style.backgroundColor = createRandomColor();
     
         });
     };
 };
     
 createGrid(25);
-    
-    
-    
+
+// random color change instead of red
+
+//💭 could use math.random for each # xx xx xx
+    //💥 would have to include letters and numbers for each 6 digits
+//💭 us a loop to iterate through an array of values 6 times and add the corresponding index value to variable
+const arrayOfColorFunctions = ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f']
+
+function createRandomColor() {
+    let randomColorString = '#';
+    for (let x = 0; x < 6; x++){
+        let index = Math.floor(Math.random() * 16);
+        let value = arrayOfColorFunctions[index];
+
+        randomColorString += value;
+    }
+    return randomColorString;
+}
+createRandomColor();
