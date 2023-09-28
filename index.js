@@ -72,12 +72,6 @@ function createGrid(number) {
     
 createGrid(25);
 
-// random color change instead of red
-
-//💭 could use math.random for each # xx xx xx
-    //💥 would have to include letters and numbers for each 6 digits
-//💭 us a loop to iterate through an array of values 6 times and add the corresponding index value to variable
-
 function createRandomColor() {
     const arrayOfColorVariables = ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f']
     let randomColorString = '#';
