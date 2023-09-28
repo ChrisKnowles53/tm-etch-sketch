@@ -24,7 +24,3 @@ body {
 	outline:1px solid red;
 	display:inline-block;
 }
-
-.grid:hover {
-    background-color: red;
-}
