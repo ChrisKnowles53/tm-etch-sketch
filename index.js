@@ -1,8 +1,23 @@
 console.clear();
 
+let numberOfPixels = 800;
 const container = document.getElementById("container");
+    container.setAttribute('style', `position: relative; top: 30px; outline:2px solid red; font-size: 0;margin:auto; height: ${numberOfPixels}px; width:${numberOfPixels}px; padding: 0; border: none;`);
+
+const heading = document.createElement("h1");
+    heading.innerText = "Etch Sketch by Chris Knowles";
+    heading.setAttribute('style', 'margin-bottom: 0px;');
+    container.insertAdjacentElement('beforebegin', heading);
+
+const paragraph = document.createElement("p");
+    paragraph.innerText = "Move your mouse over the grid and it will record where you have been.  If you want to start again click on new Grid, enter a value between 2 and 100 and click OK.";
+    paragraph.setAttribute('style', `width: ${numberOfPixels}px; font-size: 20px`);
+
+    container.insertAdjacentElement('beforebegin', paragraph);
+
 const button = document.createElement("button");
     button.innerText = "New Grid ?";
+    button.setAttribute('style', 'color: white; background-color: blue; font-size: 25px; border-radius: 10px;');
     container.insertAdjacentElement('beforebegin', button);
 
 button.addEventListener('click', function () {
@@ -27,8 +42,8 @@ function clearGrid() {
 function createGrid(number) {
     
     clearGrid();
-    let maxGridWidth = 800;
-    let maxGridHeight = 800;
+    const maxGridWidth = numberOfPixels;
+    const maxGridHeight = numberOfPixels;
     
     for (let rows = 0; rows < number; rows++) {
         for (let columns = 0; columns < number; columns++) {
@@ -55,7 +70,7 @@ function createGrid(number) {
     };
 };
     
-createGrid(userInput());
+createGrid(25);
     
     
     
