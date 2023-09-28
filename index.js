@@ -54,9 +54,9 @@ function createGrid(number) {
     }
     
     const gridElements = document.querySelectorAll(".grid");
-    gridElements.forEach(function (element) {
-        element.style.width = maxGridWidth / number + "px";
-        element.style.height = maxGridHeight / number + "px";
+    gridElements.forEach(function (eachDiv) {
+        eachDiv.style.width = maxGridWidth / number + "px";
+        eachDiv.style.height = maxGridHeight / number + "px";
     });
     
         
