@@ -64,13 +64,23 @@ function createGrid(number) {
     
     for (let i = 0; i < divs.length; i++) {
         divs[i].addEventListener('mouseover', function (specificDiv) {
-            specificDiv.target.style.backgroundColor = 'red';
+            specificDiv.target.style.backgroundColor = createRandomColor();
     
         });
     };
 };
     
 createGrid(25);
-    
-    
-    
+
+function createRandomColor() {
+    const arrayOfColorVariables = ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f']
+    let randomColorString = '#';
+    for (let x = 0; x < 6; x++){
+        let index = Math.floor(Math.random() * 16);
+        let value = arrayOfColorVariables[index];
+
+        randomColorString += value;
+    }
+    return randomColorString;
+}
+createRandomColor();
